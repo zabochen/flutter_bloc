@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_example/res/strings.dart';
+import 'package:flutter_bloc_example/ui/comment_bloc/comment_screen.dart';
 import 'package:flutter_bloc_example/ui/post_cubit/post_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,12 +22,22 @@ class HomeScreenState extends State {
             child: Column(
               children: <Widget>[
                 RaisedButton(
-                  child: Text(Strings.homeScreen_openPostScreen),
+                  child: Text(Strings.homeScreen_openCubitPostScreen),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => PostScreen(),
+                        ));
+                  },
+                ),
+                RaisedButton(
+                  child: Text(Strings.homeScreen_openBlocCommentScreen),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CommentScreen(),
                         ));
                   },
                 ),
